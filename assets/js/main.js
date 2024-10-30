@@ -1,5 +1,4 @@
-
-(function($) {
+(function ($) {
 
     var $window = $(window),
         $body = $('body'),
@@ -7,15 +6,15 @@
 
     // Breakpoints.
     breakpoints({
-        xlarge:  [ '1281px',  '1680px' ],
-        large:   [ '981px',   '1280px' ],
-        medium:  [ '737px',   '980px'  ],
-        small:   [ null,      '736px'  ]
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: [null, '736px']
     });
 
     // Play initial animations on page load.
-    $window.on('load', function() {
-        window.setTimeout(function() {
+    $window.on('load', function () {
+        window.setTimeout(function () {
             $body.removeClass('is-preload');
         }, 100);
     });
@@ -23,30 +22,37 @@
     // Scrolly.
     $('#nav a, .scrolly').scrolly({
         speed: 1000,
-        offset: function() { return $nav.height(); }
+        offset: function () { return $nav.height(); }
     });
 
-    // Swiper Carousel Initialization
+    // Swiper Carousel Initialization for Team Portfolio
     $(document).ready(function () {
-        var swiper = new Swiper('.swiper-container', {
-            loop: true, // Repetir el carrusel infinitamente
-            slidesPerView: 1, // Mostrar solo una imagen a la vez
-            centeredSlides: true, // Centrar las imágenes
-            autoplay: { // Configuración de reproducción automática
-                delay: 5000, // Cambiar la imagen cada 5 segundos
-                disableOnInteraction: false, // Continuar reproduciendo después de la interacción del usuario
+        var swiper = new Swiper('.team-carousel', {
+            loop: true,  // Repetir infinitamente
+            autoplay: {  // Configuración de autoplay
+                delay: 3000,  // Cambia cada 3 segundos
+                disableOnInteraction: false,  // Continuar después de la interacción
             },
-            pagination: { // Mostrar puntos de paginación
+            pagination: {  // Puntos de paginación
                 el: '.swiper-pagination',
-                clickable: true, // Permitir clics en los puntos de paginación
+                clickable: true,
             },
-            navigation: { // Botones de navegación prev/next
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            on: {
-                click: function(swiper) {
-                    swiper.slideNext(); // Cambiar a la siguiente imagen al hacer clic
+            breakpoints: {  // Responsivo para diferentes tamaños de pantalla
+                320: {  // En pantallas pequeñas
+                    slidesPerView: 1,  // Mostrar 1 slide
+                    spaceBetween: 10
+                },
+                768: {  // En pantallas medianas
+                    slidesPerView: 2,  // Mostrar 2 slides
+                    spaceBetween: 20
+                },
+                1024: {  // En pantallas grandes
+                    slidesPerView: 3,  // Mostrar 3 slides
+                    spaceBetween: 30
+                },
+                1440: {  // En pantallas más grandes
+                    slidesPerView: 5,  // Mostrar 5 slides
+                    spaceBetween: 40
                 }
             }
         });

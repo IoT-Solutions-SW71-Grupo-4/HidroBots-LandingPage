@@ -2098,44 +2098,94 @@ input, select, textarea {
 					border-top: solid 0.6em #282828;
 				}
 
-/* Articles */
+/* Overlay oscuro para mejorar la legibilidad */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
+    backdrop-filter: blur(5px); /* Difumina ligeramente */
+    z-index: 1;
+}
 
-	body > article {
-		margin-bottom: 0;
-	}
+/* Contenedor principal */
+#top .container {
+    position: relative;
+    z-index: 2; /* Encima del overlay */
+    color: white;
+    text-align: left;
+    max-width: 1200px;
+}
 
-	#top {
-		padding: 10em 0 10em 0;
-		text-align: left;
-	}
+/* Estilo del logo */
+#top .image.fit img {
+    border-radius: 50%; /* Borde circular */
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+}
 
-		#top .image {
-			border-radius: 100%;
-			width: 20em;
-			height: 20em;
-			margin: 0;
-		}
+/* Contenido del texto */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
 
-			#top .image img {
-				border-radius: 100%;
-			}
+/* Estilo del texto */
+#top h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
 
-		#top h1 {
-			margin-top: 0.35em;
-		}
+#top p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
 
-		#top p {
-			font-size: 1.5em;
-			line-height: 1.75em;
-		}
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-			#top p a {
-				color: inherit;
-			}
+/* Estilo de los botones */
+.button-container .button {
+    background-color: #27AE60;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-	#contact footer {
-		font-size: 0.9em;
-	}
+.button-container .button i {
+    margin-left: 10px;
+}
+
+.button-container .button:hover {
+    background-color: #1e8449;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
 
 /* Copyright */
 
@@ -2431,9 +2481,11 @@ input, select, textarea {
 /* Estilos para el contenedor del móvil */
 .mobile-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
     padding: 2em 0;
+    gap: 1.5em; /* Espacio entre móvil y botón */
 }
 
 /* Marco del móvil estilo iPhone */
@@ -2482,14 +2534,83 @@ input, select, textarea {
     border-radius: 0; /* Sin borde en las imágenes */
     cursor: pointer; /* Cursor de puntero para indicar que se puede hacer clic */
 }
+
+/* Contenedor del botón debajo del móvil */
 .button-container {
-    text-align: center; /* Centra el botón horizontalmente */
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;
     margin-top: 20px; /* Espacio superior para separar el botón del teléfono */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
 }
+
+/* Imagen destacada */
 .image.featured img {
     width: 100%; /* Hace que la imagen llene el contenedor */
     height: 200px; /* Establece una altura fija */
     object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsión */
     display: block; /* Elimina el espacio debajo de las imágenes */
     border-radius: 8px; /* Añade bordes redondeados si es necesario */
+}
+
+/* Carrusel de equipo */
+.team-carousel {
+    padding: 20px 0;
+}
+
+.team-carousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.team-carousel .box {
+    width: 90%; /* Ajustar el tamaño del contenido dentro de cada slide */
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Efecto Hover: Cambiar color a verde en todas las letras */
+.team-carousel .box:hover h3,
+.team-carousel .box:hover p {
+    color: #04A033; /* Color verde al pasar el mouse */
+}
+
+/* Tarjetas de plan */
+.plan-card {
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Efecto Hover en tarjetas de plan */
+.plan-card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Icono destacado dentro de las tarjetas */
+.plan-card .icon.featured {
+    color: #04A033; /* Color del ícono */
+    margin-bottom: 15px;
+}
+
+/* Listas dentro del Plan */
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-card ul li {
+    margin: 8px 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Precio en tarjetas de plan */
+.plan-card p {
+    color: #27AE60;
+    font-weight: bold;
 }

@@ -1,113 +1,214 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Hidrobot IOT</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<html lang="es">
+<head>
+    <title>Hidrobot IOT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        /* Overlay oscuro para mejorar la legibilidad */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Capa oscura reducida */
+            backdrop-filter: blur(0.5px); /* Menos desenfoque */
+            z-index: 1;
+        }
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Inicio</a></li>
-					<li><a href="#work">Servicios</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#contact">Contacto</a></li>
-				</ul>
-			</nav>
+        /* Contenedor principal */
+        #top .container {
+            position: relative;
+            z-index: 2; /* Encima del overlay */
+            color: white;
+            text-align: left;
+            max-width: 1200px;
+            padding: 50px 0;
+        }
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Presentamos <strong>Hidrobots</strong>.</h1>
-							</header>
-							<p>Somos una solucion de <strong>Intenet Of Things</strong>, que ayuda a cientos de agricultores en todo el Perú y el Mundo. Reecorre nuestra moderna plataforma tanto en formato web y movil.</p>
-							<a href="#work" class="button large scrolly">
-								Ingresa a Hidrobots Web <i class="fas fa-globe"></i> 
-							</a>
-							
-							<a href="#mobile-showcase" class="button large scrolly">
-								Ingresa a Hidrobots Movil  <i class="fas fa-mobile-alt"></i>
-							</a>
-							
-						</div>
-					</div>
-				</div>
-			</article>
+        /* Estilo del logo */
+        #top .image.fit img {
+            border-radius: 50%; /* Borde circular */
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+        }
 
+        /* Contenido del texto */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Estilo del texto */
+        #top h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #top p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor de botones */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Estilo de los botones */
+        .button-container .button {
+            background-color: #27AE60;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-container .button i {
+            margin-left: 10px;
+        }
+
+        .button-container .button:hover {
+            background-color: #1e8449;
+            transform: scale(1.05);
+        }
+
+        /* Fondo del artículo con la imagen */
+        article#top {
+            background-image: url('images/CultivoFondo.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="container">
+            <li><a href="#top">Inicio</a></li>
+            <li><a href="#work">Servicios</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <article id="top" class="wrapper style1">
+        <div class="overlay"></div> <!-- Capa oscura para contraste -->
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-5-large col-12-medium">
+                    <span class="image fit">
+                        <img src="images/pic00.jpg" alt="Hidrobots Logo" />
+                    </span>
+                </div>
+                <div class="col-8 col-7-large col-12-medium content">
+                    <header>
+                        <h1>Presentamos <strong>Hidrobots</strong>.</h1>
+                    </header>
+                    <p>
+                        Somos una solución de <strong>Internet Of Things</strong> que ayuda a cientos de agricultores en todo el Perú y el Mundo. Recorre nuestra moderna plataforma tanto en formato web como móvil.
+                    </p>
+                    <div class="button-container">
+                        <a href="#work" class="button large scrolly">
+                            Ingresa a Hidrobots Web <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="#mobile-showcase" class="button large scrolly">
+                            Ingresa a Hidrobots Móvil <i class="fas fa-mobile-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
 
 
 
 						<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Planes de suscripción</h2>
-						<p>Selecciona el plan que mejor se adapte a tus necesidades. Hidrobots te ofrece soluciones personalizadas para maximizar la eficiencia de tus cultivos.</p>
-					</header>
-					<div class="row aln-center">
-						<!-- Plan Básico -->
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured"><i class="fas fa-leaf fa-3x"></i></span>
-								<h3>Plan Básico</h3>
-								<ul>
-									<li>Acceso a nuestras plataformas</li>
-									<li>Datos y métricas climáticas en tiempo real</li>
-									<li>Control de rociadores</li>
-									<li>Plan de cotización de rociadores</li>
-									<li>Soporte de hasta 10 rociadores simultáneos</li>
-								</ul>
-								<p style="font-size: 2.5em; font-weight: bold;">S/70</p>
-							</section>
-						</div>
+<article id="work" class="wrapper style2">
+    <div class="container">
+        <header>
+            <h2>Planes de suscripción</h2>
+            <p>Selecciona el plan que mejor se adapte a tus necesidades. Hidrobots te ofrece soluciones personalizadas para maximizar la eficiencia de tus cultivos.</p>
+        </header>
+        
+        <div class="row aln-center">
+            <!-- Plan Básico -->
+            <div class="col-4 col-6-medium col-12-small">
+                <section class="box style1 plan-card">
+                    <span class="icon featured"><i class="fas fa-leaf fa-3x"></i></span>
+                    <h3>Plan Básico</h3>
+                    <ul>
+                        <li>Acceso a nuestra web</li>
+                        <li>Acceso a nuestras app</li>
+                        <li>Datos y métricas climáticas en tiempo real</li>
+                        <li>Control de rociadores</li>
+                        <li>Plan de cotización de rociadores</li>
+                        <li>Soporte de hasta 10 rociadores simultáneos</li>
+                    </ul>
+                    <p style="font-size: 2.5em; font-weight: bold;">S/70</p>
+                </section>
+            </div>
 
-						<!-- Plan Intermedio -->
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured"><i class="fas fa-seedling fa-3x"></i></span>
-								<h3>Plan Intermedio</h3>
-								<ul>
-									<li>Acceso a nuestras plataformas</li>
-									<li>Control de rociadores en tiempo real</li>
-									<li>Soporte de ayuda y consejos</li>
-									<li>10% de descuento en plan de cotización de rociadores</li>
-									<li>Soporte de hasta 30 rociadores simultáneos</li>
-								</ul>
-								<p style="font-size: 2.5em; font-weight: bold;">S/100</p>
-							</section>
-						</div>
+            <!-- Plan Intermedio -->
+            <div class="col-4 col-6-medium col-12-small">
+                <section class="box style1 plan-card">
+                    <span class="icon featured"><i class="fas fa-seedling fa-3x"></i></span>
+                    <h3>Plan Intermedio</h3>
+                    <ul>
+                        <li>Acceso a nuestras plataformas</li>
+                        <li>Control de rociadores en tiempo real</li>
+                        <li>Soporte de ayuda y consejos</li>
+                        <li>10% de descuento en plan de cotización de rociadores</li>
+                        <li>Soporte de hasta 30 rociadores simultáneos</li>
+                    </ul>
+                    <p style="font-size: 2.5em; font-weight: bold;">S/100</p>
+                </section>
+            </div>
 
-						<!-- Plan Avanzado -->
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured"><i class="fas fa-tree fa-3x"></i></span>
-								<h3>Plan Avanzado</h3>
-								<ul>
-									<li>Acceso a nuestras plataformas</li>
-									<li>Control de rociadores en tiempo real</li>
-									<li>Soporte de ayuda y consejos</li>
-									<li>20% de descuento en plan de cotización de rociadores</li>
-									<li>Soporte de hasta 80 rociadores simultáneos</li>
-								</ul>
-								<p style="font-size: 2.5em; font-weight: bold;">S/250</p>
-							</section>
-						</div>
-					</div>
-					<footer>
-						<p>¿Te interesa formar parte de nuestra moderna red?</p>
-						<a href="#portfolio" class="button large scrolly">Comencemos</a>
-					</footer>
-				</div>
-			</article>
+            <!-- Plan Avanzado -->
+            <div class="col-4 col-6-medium col-12-small">
+                <section class="box style1 plan-card">
+                    <span class="icon featured"><i class="fas fa-tree fa-3x"></i></span>
+                    <h3>Plan Avanzado</h3>
+                    <ul>
+                        <li>Acceso a nuestras plataformas</li>
+                        <li>Control de rociadores en tiempo real</li>
+                        <li>Soporte de ayuda y consejos</li>
+                        <li>20% de descuento en plan de cotización de rociadores</li>
+                        <li>Soporte de hasta 80 rociadores simultáneos</li>
+                    </ul>
+                    <p style="font-size: 2.5em; font-weight: bold;">S/250</p>
+                </section>
+            </div>
+        </div>
+        
+        <footer>
+            <p>¿Te interesa formar parte de nuestra moderna red?</p>
+            <a href="#portfolio" class="button large scrolly">Comencemos</a>
+        </footer>
+    </div>
+</article>
 
 
 
@@ -139,9 +240,6 @@
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
-                    <!-- Add Navigation Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         </div>
@@ -188,66 +286,71 @@
 
 
 			
-		<!-- Team Portfolio-->
-		<article id="portfolio" class="wrapper style3">
-			<div class="container">
-				<header>
-					<h2>Conoce a nuestro equipo.</h2>
-					<p>Estudiantes innovadores de la UPC desarrolladores de Hidrobots.</p>
-				</header>
-				<div class="row">
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured">
-								<img src="images/Fabio_image.jpg" alt="Fabio Image" />
-							</a>
-							<h3><a href="#">Fabio Horna</a></h3>
-							<p>Soy Fabio, estudiante de Ingeniería de Software apasionado por el análisis de datos y videojuegos. Trabajo como analista de datos y tengo experiencia en Python, redes neuronales y SQL.</p>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured">
-								<img src="images/Diego_image.jpg" alt="Diego Image" />
-							</a>
-							<h3><a href="#">Diego Santillán </a></h3>
-							<p>Soy Diego, estudiante de Ingeniería de Software con pasión por la programación y diseño. Me especializo en backend, frontend, y data science. Soy autodidactay busco soluciones creativas.</p>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured">
-								<img src="images/Jose_image.jpeg" alt="Jose Image" />
-							</a>
-							<h3><a href="#">Jose Ampudia</a></h3>
-							<p>Soy José, estudiante de Ingeniería de Software con habilidades en desarrollo web, tanto frontend como backend. Me gusta aprender, colaborar con otros, y me considero responsable y proactivo.</p>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured">
-								<img src="images/Leonardo_image.jpg" alt="Leonardo Image" />
-							</a>
-							<h3><a href="#">Leonardo Lopez</a></h3>
-							<p>Soy Leonardo, estudiante de Ingeniería de Software con conocimientos en Angular, Spring Boot, MySQL y Flutter. Me considero proactivo, autodidacta y trabajo bien en equipo.</p>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured">
-								<img src="images/Tatiana_image.jpg" alt="Tatiana Image" />
-							</a>
-							<h3><a href="#">Tatiana Paucar</a></h3>
-							<p>Soy Tatiana, estudiante de Ingeniería de Software con interés en desarrollo web, móvil y seguridad informática. Soy organizada, responsable y comprometida con el aprendizaje continuo.</p>
-						</article>
-					</div>
-				</div>
-				<footer>
-					<p>Te hace falta información?</p>
-					<a href="#https://github.com/IoT-Solutions-SW71-Grupo-4/HidroBots-Report/tree/main?tab=readme-ov-file#112-perfiles-de-integrantes-del-equipo" class="button large scrolly">Conoce mas del equipo</a>
-				</footer>
-			</div>
-		</article>
+<article id="portfolio" class="wrapper style3">
+    <div class="container">
+        <header>
+            <h2>Conoce a nuestro equipo.</h2>
+            <p>Estudiantes innovadores de la UPC desarrolladores de Hidrobots.</p>
+        </header>
+
+        <!-- Swiper Container -->
+        <div class="swiper team-carousel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <article class="box style2">
+                        <a href="#" class="image featured">
+                            <img src="images/Fabio_image.jpg" alt="Fabio Image" />
+                        </a>
+                        <h3><a href="#">Fabio Horna</a></h3>
+                        <p>Soy Fabio, estudiante de Ingeniería de Software apasionado por el análisis de datos y videojuegos.</p>
+                    </article>
+                </div>
+                <div class="swiper-slide">
+                    <article class="box style2">
+                        <a href="#" class="image featured">
+                            <img src="images/Diego_image.jpg" alt="Diego Image" />
+                        </a>
+                        <h3><a href="#">Diego Santillán</a></h3>
+                        <p>Soy Diego, tengo gran pasión por la programación y diseño tanto web como movil.</p>
+                    </article>
+                </div>
+                <div class="swiper-slide">
+                    <article class="box style2">
+                        <a href="#" class="image featured">
+                            <img src="images/Jose_image.jpeg" alt="Jose Image" />
+                        </a>
+                        <h3><a href="#">Jose Ampudia</a></h3>
+                        <p>Soy José, cuento con grandes habilidades en desarrollo web tanto frontend como backend.</p>
+                    </article>
+                </div>
+                <div class="swiper-slide">
+                    <article class="box style2">
+                        <a href="#" class="image featured">
+                            <img src="images/Leonardo_image.jpg" alt="Leonardo Image" />
+                        </a>
+                        <h3><a href="#">Leonardo Lopez</a></h3>
+                        <p>Soy Leonardo, poseo avanzados conocimientos en Angular, Spring Boot, y Flutter.</p>
+                    </article>
+                </div>
+                <div class="swiper-slide">
+                    <article class="box style2">
+                        <a href="#" class="image featured">
+                            <img src="images/Tatiana_image.jpg" alt="Tatiana Image" />
+                        </a>
+                        <h3><a href="#">Tatiana Paucar</a></h3>
+                        <p>Soy Tatiana, estoy muy interesada en desarrollo web, móvil y seguridad informática.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 
 		<!-- Contact -->
@@ -298,6 +401,7 @@
 					</footer>
 				</div>
 			</article>
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
